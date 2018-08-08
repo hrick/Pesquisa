@@ -1,0 +1,324 @@
+[
+  {
+    "idPergunta": 1,
+    "descricao": "Qual é o tamanho de sua empresa?",
+    "ordenacao": 1,
+    "opcoes": [
+      {
+        "id": 3
+      },
+      {
+        "id": 4
+      },
+      {
+        "id": 5
+      }
+    ]
+  },
+  {
+    "idPergunta": 2,
+    "descricao": "Sua empresa tem revelado interesse em trabalhar o tema de diversidade e equidade racial.",
+    "ordenacao": 2,
+    "opcoes": [
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "idPergunta": 3,
+    "descricao": "Já realizou ações voltadas para o tema da diversidade?",
+    "ordenacao": 3,
+    "opcoes": [
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "idPergunta": 4,
+    "descricao": "Que tipo?",
+    "ordenacao": 4,
+    "opcoes": []
+  },
+  {
+    "idPergunta": 5,
+    "descricao": "Criação de GT",
+    "ordenacao": 5,
+    "opcoes": [
+      {
+        "id": 6
+      },
+      {
+        "id": 7
+      },
+      {
+        "id": 8
+      },
+      {
+        "id": 9
+      },
+      {
+        "id": 10
+      }
+    ]
+  },
+  {
+    "idPergunta": 6,
+    "descricao": "Análise demográfica",
+    "ordenacao": 6,
+    "opcoes": [
+      {
+        "id": 6
+      },
+      {
+        "id": 7
+      },
+      {
+        "id": 8
+      },
+      {
+        "id": 9
+      },
+      {
+        "id": 10
+      }
+    ]
+  },
+  {
+    "idPergunta": 7,
+    "descricao": "Campanha interna",
+    "ordenacao": 7,
+    "opcoes": [
+      {
+        "id": 6
+      },
+      {
+        "id": 7
+      },
+      {
+        "id": 8
+      },
+      {
+        "id": 9
+      },
+      {
+        "id": 10
+      }
+    ]
+  },
+  {
+    "idPergunta": 8,
+    "descricao": "Campanha externa",
+    "ordenacao": 8,
+    "opcoes": [
+      {
+        "id": 6
+      },
+      {
+        "id": 7
+      },
+      {
+        "id": 8
+      },
+      {
+        "id": 9
+      },
+      {
+        "id": 10
+      }
+    ]
+  },
+  {
+    "idPergunta": 9,
+    "descricao": "Sensibilização ou formação",
+    "ordenacao": 9,
+    "opcoes": [
+      {
+        "id": 6
+      },
+      {
+        "id": 7
+      },
+      {
+        "id": 8
+      },
+      {
+        "id": 9
+      },
+      {
+        "id": 10
+      }
+    ]
+  },
+  {
+    "idPergunta": 10,
+    "descricao": "Avaliação de trajetória por grupos",
+    "ordenacao": 10,
+    "opcoes": [
+      {
+        "id": 6
+      },
+      {
+        "id": 7
+      },
+      {
+        "id": 8
+      },
+      {
+        "id": 9
+      },
+      {
+        "id": 10
+      }
+    ]
+  },
+  {
+    "idPergunta": 11,
+    "descricao": "3. O tema específico da equidade racial já orientou que tipo de ações em sua empresa:",
+    "ordenacao": 11,
+    "opcoes": []
+  },
+  {
+    "idPergunta": 12,
+    "descricao": "Ampliar a presença de negros e negras no quadro de pessoal",
+    "ordenacao": 12,
+    "opcoes": [
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "idPergunta": 13,
+    "descricao": "Ampliar a presença de negros e negras nos níveis de liderança",
+    "ordenacao": 13,
+    "opcoes": [
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "idPergunta": 14,
+    "descricao": "Desenvolvimento de produtos e serviços para a população negra",
+    "ordenacao": 14,
+    "opcoes": [
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "idPergunta": 15,
+    "descricao": "Desenvolvimento de produtos e serviços para a população negra",
+    "ordenacao": 15,
+    "opcoes": [
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "idPergunta": 16,
+    "descricao": "Desenvolvimento de campanhas focando:",
+    "ordenacao": 16,
+    "opcoes": []
+  },
+  {
+    "idPergunta": 17,
+    "descricao": "O cliente ou consumidor negro",
+    "ordenacao": 17,
+    "opcoes": [
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "idPergunta": 18,
+    "descricao": "O cliente e o consumidor em geral",
+    "ordenacao": 18,
+    "opcoes": [
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "idPergunta": 19,
+    "descricao": "O público interno da empresa",
+    "ordenacao": 19,
+    "opcoes": [
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "idPergunta": 20,
+    "descricao": "Realização de ações visando ampliar a equidade racial e de gênero entre os fornecedores de produtos e serviços para a empresa",
+    "ordenacao": 20,
+    "opcoes": [
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "idPergunta": 21,
+    "descricao": "Apoio a projetos sociais visando fortalecimento de organizações da sociedade civil que trabalham com equidade racial",
+    "ordenacao": 21,
+    "opcoes": [
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "idPergunta": 22,
+    "descricao": "4. Sua empresa teria interesse em participar de um grupo de organizações envolvidas no censo diversidade?",
+    "ordenacao": 22,
+    "opcoes": [
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      }
+    ]
+  }
+]

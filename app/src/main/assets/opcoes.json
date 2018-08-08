@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "descricao": "Sim"
+  },
+  {
+    "id": 2,
+    "descricao": "Não"
+  },
+  {
+    "id": 3,
+    "descricao": "Pequena"
+  },
+  {
+    "id": 4,
+    "descricao": "Média"
+  },
+  {
+    "id": 5,
+    "descricao": "Grande"
+  },
+  {
+    "id": 6,
+    "descricao": "Gênero"
+  },
+  {
+    "id": 7,
+    "descricao": "Raça/cor"
+  },
+  {
+    "id": 8,
+    "descricao": "PcD"
+  },
+  {
+    "id": 9,
+    "descricao": "LGBTIQ+"
+  },
+  {
+    "id": 10,
+    "descricao": "Outro"
+  }
+]

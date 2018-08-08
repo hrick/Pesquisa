@@ -4,6 +4,7 @@ import com.j256.ormlite.dao.ForeignCollection
 import com.j256.ormlite.field.DatabaseField
 import com.j256.ormlite.field.ForeignCollectionField
 import com.j256.ormlite.table.DatabaseTable
+import java.io.Serializable
 
 @DatabaseTable(tableName = "TB_PERGUNTA")
 data class Pergunta(@DatabaseField(columnName = Pergunta.Fields.ID_PERGUNTA, id = true)
@@ -13,9 +14,7 @@ data class Pergunta(@DatabaseField(columnName = Pergunta.Fields.ID_PERGUNTA, id 
                     @DatabaseField(columnName = Pergunta.Fields.ORDENACAO)
                     val ordenacao: Int? = null,
                     @ForeignCollectionField(eager = false)
-                    val opcoes: ForeignCollection<String>? = null,
-                    @ForeignCollectionField(eager = false)
-                    val subPerguntas: ForeignCollection<SubPergunta>? = null) {
+                    val opcoes: ForeignCollection<PerguntaOpcao>? = null): Serializable {
 
     object Fields {
         const val ID_PERGUNTA = "ID_PERGUNTA"

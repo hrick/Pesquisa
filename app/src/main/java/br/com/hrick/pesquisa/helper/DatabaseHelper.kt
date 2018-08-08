@@ -3,6 +3,7 @@ package br.com.hrick.pesquisa.helper
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.util.Log
+import br.com.hrick.pesquisa.entity.*
 
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper
 import com.j256.ormlite.dao.Dao
@@ -11,27 +12,27 @@ import com.j256.ormlite.table.TableUtils
 
 import java.io.Closeable
 import java.sql.SQLException
-import br.com.hrick.pesquisa.entity.Pergunta
-import br.com.hrick.pesquisa.entity.Pesquisa
-import br.com.hrick.pesquisa.entity.Resposta
-import br.com.hrick.pesquisa.entity.SubPergunta
 
 class DatabaseHelper(private val context: Context) : OrmLiteSqliteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION), Closeable {
 
 
     private var respostaDao: Dao<Resposta, Int>? = null
-    private var subPerguntaDao: Dao<SubPergunta, Int>? = null
     private var perguntaDao: Dao<Pergunta, Int>? = null
     private var pesquisaDao: Dao<Pesquisa, Int>? = null
+    private var opcaoDao: Dao<Opcao, Int>? = null
+    private var perguntaOpcaoDao: Dao<PerguntaOpcao, String>? = null
 
     override fun onCreate(db: SQLiteDatabase, connectionSource: ConnectionSource) {
         try {
-            Log.i("DatabaseHelper", "onCreate database")
-
             TableUtils.createTable<Resposta>(connectionSource, Resposta::class.java)
-            TableUtils.createTable<SubPergunta>(connectionSource, SubPergunta::class.java)
+
+            TableUtils.createTable<PerguntaOpcao>(connectionSource, PerguntaOpcao::class.java)
+
+            TableUtils.createTable<Opcao>(connectionSource, Opcao::class.java)
+
             TableUtils.createTable<Pergunta>(connectionSource, Pergunta::class.java)
             TableUtils.createTable<Pesquisa>(connectionSource, Pesquisa::class.java)
+
 
 
         } catch (e: SQLException) {
@@ -48,9 +49,11 @@ class DatabaseHelper(private val context: Context) : OrmLiteSqliteOpenHelper(con
 
 
             TableUtils.dropTable<Resposta, Any>(connectionSource, Resposta::class.java, true)
-            TableUtils.dropTable<SubPergunta, Any>(connectionSource, SubPergunta::class.java, true)
             TableUtils.dropTable<Pergunta, Any>(connectionSource, Pergunta::class.java, true)
             TableUtils.dropTable<Pesquisa, Any>(connectionSource, Pesquisa::class.java, true)
+            TableUtils.dropTable<Opcao, Any>(connectionSource, Opcao::class.java, true)
+            TableUtils.dropTable<PerguntaOpcao, Any>(connectionSource, PerguntaOpcao::class.java, true)
+
 
             onCreate(db, connectionSource)
         } catch (e: SQLException) {
@@ -63,7 +66,7 @@ class DatabaseHelper(private val context: Context) : OrmLiteSqliteOpenHelper(con
     fun getRespostaDao(): Dao<Resposta, Int>? {
         if (null == respostaDao) {
             try {
-                respostaDao = getDao<Dao<Resposta, Int>, Resposta>(Resposta::class.java)
+                respostaDao = getDao(Resposta::class.java)
             } catch (e: java.sql.SQLException) {
                 e.printStackTrace()
             }
@@ -72,10 +75,35 @@ class DatabaseHelper(private val context: Context) : OrmLiteSqliteOpenHelper(con
         return respostaDao
     }
 
+
+    fun getPerguntaOpcaoDao(): Dao<PerguntaOpcao, String>? {
+        if (null == perguntaOpcaoDao) {
+            try {
+                perguntaOpcaoDao = getDao(PerguntaOpcao::class.java)
+            } catch (e: java.sql.SQLException) {
+                e.printStackTrace()
+            }
+
+        }
+        return perguntaOpcaoDao
+    }
+
+    fun getOpcaoDao(): Dao<Opcao, Int>? {
+        if (null == opcaoDao) {
+            try {
+                opcaoDao = getDao(Opcao::class.java)
+            } catch (e: java.sql.SQLException) {
+                e.printStackTrace()
+            }
+
+        }
+        return opcaoDao
+    }
+
     fun getPerguntaDao(): Dao<Pergunta, Int>? {
         if (null == perguntaDao) {
             try {
-                perguntaDao = getDao<Dao<Pergunta, Int>, Pergunta>(Pergunta::class.java)
+                perguntaDao = getDao(Pergunta::class.java)
             } catch (e: java.sql.SQLException) {
                 e.printStackTrace()
             }
@@ -84,22 +112,10 @@ class DatabaseHelper(private val context: Context) : OrmLiteSqliteOpenHelper(con
         return perguntaDao
     }
 
-    fun getSubPerguntaDao(): Dao<SubPergunta, Int>? {
-        if (null == subPerguntaDao) {
-            try {
-                subPerguntaDao = getDao<Dao<SubPergunta, Int>, SubPergunta>(SubPergunta::class.java)
-            } catch (e: java.sql.SQLException) {
-                e.printStackTrace()
-            }
-
-        }
-        return subPerguntaDao
-    }
-
     fun getPesquisaDao(): Dao<Pesquisa, Int>? {
         if (null == pesquisaDao) {
             try {
-                pesquisaDao = getDao<Dao<Pesquisa, Int>, Pesquisa>(Pesquisa::class.java)
+                pesquisaDao = getDao(Pesquisa::class.java)
             } catch (e: java.sql.SQLException) {
                 e.printStackTrace()
             }

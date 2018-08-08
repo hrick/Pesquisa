@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Pesquisa</string>
+    <string name="titulo_pesquisas_realizadas">Pesquisas Realizadas</string>
+    <string name="titulo_informacao">Informações</string>
+    <string name="hint_quantidade">0</string>
+    <string name="description_exportar_excel">Exportar Excel</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description_excluir">Excluir</string>
+    <string name="exportar_em_excel">Exportar em Excel</string>
+    <string name="ok">OK</string>
+    <string name="warning">Atenção</string>
+    <string name="pesquisa_diversidade_e_equidade_racial">Pesquisa diversidade e equidade racial</string>
 </resources>
