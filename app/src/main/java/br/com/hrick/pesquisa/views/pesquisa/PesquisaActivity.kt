@@ -2,6 +2,7 @@ package br.com.hrick.pesquisa.views.pesquisa
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.*
 import br.com.hrick.pesquisa.R
 import br.com.hrick.pesquisa.entity.Pergunta
@@ -13,7 +14,7 @@ import br.com.hrick.pesquisa.repository.data.RespostaRepository
 import kotlinx.android.synthetic.main.activity_pesquisa.*
 import java.util.*
 import android.widget.RadioGroup
-
+import kotlinx.android.synthetic.main.toolbar.*
 
 
 class PesquisaActivity : AppCompatActivity() {
@@ -25,6 +26,12 @@ class PesquisaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pesquisa)
+        setSupportActionBar(toolbar)
+        title = "Nova Pesquisa"
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+            supportActionBar!!.setHomeButtonEnabled(true)
+        }
         PerguntaRepository.init(this)
         RespostaRepository.init(this)
         PesquisaRepository.init(this)
@@ -36,6 +43,15 @@ class PesquisaActivity : AppCompatActivity() {
             listarRespostas = mutableListOf()
         }
         carregarTelaDinamica()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        if (id == android.R.id.home) {
+            finish()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun carregarTelaDinamica() {
@@ -51,6 +67,7 @@ class PesquisaActivity : AppCompatActivity() {
                     val resposta = listarRespostas?.find { it.idPergunta == pergunta.idPergunta }
                     val radioGroup = RadioGroup(this)
                     radioGroup.orientation = LinearLayout.VERTICAL
+                    radioGroup.id = pergunta.idPergunta ?: Random(4).nextInt()
                     pergunta.opcoes.forEach { opcao ->
                         val radioButton = RadioButton(this)
                         radioButton.text = opcao.opcao?.descricao
