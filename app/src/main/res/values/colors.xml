@@ -4,5 +4,9 @@
     <color name="colorPrimary">#C22229</color>
     <color name="colorPrimaryDark">#AD0022</color>
     <color name="red_overlay">#b378061d</color>
+    <color name="white_deselect">#c5ffffff</color>
+    <color name="white_select">#ffffff</color>
+    <color name="divider">#a4000000</color>
+    <color name="textColor">#292929</color>
     <color name="colorAccent">#C22229</color>
 </resources>

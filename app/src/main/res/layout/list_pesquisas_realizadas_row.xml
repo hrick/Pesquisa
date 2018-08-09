@@ -1,28 +1,39 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
 
 
     <TextView
         android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
         android:layout_centerVertical="true"
-        tools:text="Pesquisa 1"
+        android:layout_margin="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        tools:text="Pesquisa 1" />
 
     <ImageButton
-        android:background="?android:attr/selectableItemBackgroundBorderless"
-
         android:id="@+id/ibExcluir"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignEnd="@+id/tvTitulo"
         android:layout_alignParentEnd="true"
-        android:layout_width="50dp"
-        android:src="@drawable/ic_delete"
-        android:layout_height="50dp"
-        android:contentDescription="@string/description_excluir" />
+        android:layout_centerVertical="true"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/description_excluir"
+        android:src="@drawable/ic_delete" />
+
+    <View
+        android:layout_marginStart="16dp"
+        android:layout_width="match_parent"
+        android:background="@color/divider"
+        android:layout_below="@+id/ibExcluir"
+        android:layout_height="0.5dp"/>
+
 
 </RelativeLayout>

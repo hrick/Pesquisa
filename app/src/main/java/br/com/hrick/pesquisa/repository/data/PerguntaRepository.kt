@@ -74,7 +74,7 @@ class PerguntaRepository private constructor(val ctx: Context) {
         val perguntas = constructUsingGson(Array<PerguntaFirebase>::class.java, "perguntas.json")
         TransactionManager.callInTransaction(helper.getPerguntaDao()?.connectionSource, {
             perguntas.forEach {perguntaFirebase ->
-                val pergunta =  Pergunta(perguntaFirebase.id,perguntaFirebase.descricao,perguntaFirebase.ordenacao)
+                val pergunta =  Pergunta(perguntaFirebase.id,perguntaFirebase.descricao,perguntaFirebase.tipo,perguntaFirebase.ordenacao)
                 salvarPergunta(pergunta)
                 perguntaFirebase.opcoes?.forEach {
                     val opcaoPergunta = PerguntaOpcao("${perguntaFirebase.id}.${it.id}", Pergunta(perguntaFirebase.id),Opcao(it.id))

@@ -9,7 +9,9 @@ import android.view.ViewGroup
 
 import br.com.hrick.pesquisa.R
 import br.com.hrick.pesquisa.entity.Pesquisa
+import br.com.hrick.pesquisa.views.main.MainActivity
 import br.com.hrick.pesquisa.views.main.OnExportExcelListener
+import kotlinx.android.synthetic.main.fragment_informacoes.*
 
 class InformacoesFragment : Fragment() {
     private var listener: OnExportExcelListener? = null
@@ -29,9 +31,14 @@ class InformacoesFragment : Fragment() {
         listener = null
     }
 
+    override fun onResume() {
+        super.onResume()
+        showData((context as MainActivity).pesquisasRealizadas)
+    }
+
     fun showData(pesquisasRealizadas: List<Pesquisa>?) {
-//        tvQuantidade.tvQuantidade.text = pesquisasRealizadas?.size.toString()
-//        ibExportExcel.setOnClickListener { listener?.exportExcel() }
+        tvQuantidade.text = pesquisasRealizadas?.size.toString()
+        ibExportExcel.setOnClickListener { listener?.exportExcel() }
     }
 
     companion object {

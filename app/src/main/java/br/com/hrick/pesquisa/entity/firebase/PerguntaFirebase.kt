@@ -10,6 +10,8 @@ data class PerguntaFirebase(
         val id: Int? = null,
         @SerializedName("descricao")
         val descricao: String? = null,
+        @SerializedName("tipo")
+        val tipo: String? = null,
         @SerializedName("opcoes")
         val opcoes: List<OpcaoFirebase>? = null,
         @SerializedName("ordenacao")
@@ -17,8 +19,9 @@ data class PerguntaFirebase(
 
     @IgnoreExtraProperties
     data class FireBaseData(
-            val id: Int? = null,
+            val idPergunta: Int? = null,
             val descricao: String? = null,
-            val opcoes: Int? = null,
-            val ordenacao: List<OpcaoFirebase>? = null)
+            val tipo: String? = null,
+            val ordenacao: Int? = null,
+            val opcoes: List<OpcaoFirebase>? = null)
 }

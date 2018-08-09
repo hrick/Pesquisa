@@ -15,12 +15,20 @@ class PesquisaRepository private constructor(ctx: Context) {
 
     private val helper: DatabaseHelper = DatabaseHelper(ctx)
 
-    fun obterPesquisa(idPesquisa: Int): Pesquisa? {
+    fun obterPesquisa(idPesquisa: String): Pesquisa? {
         return helper.getPesquisaDao()?.queryForId(idPesquisa)
     }
 
     fun criarPesquisa(pesquisa: Pesquisa){
         helper.getPesquisaDao()?.createOrUpdate(pesquisa)
+    }
+
+    fun obterPesquisas(): List<Pesquisa>? {
+        return helper.getPesquisaDao()?.queryForAll()
+    }
+
+    fun removerPesquisa(item: Pesquisa) {
+        helper.getPesquisaDao()?.delete(item)
     }
 
     companion object {

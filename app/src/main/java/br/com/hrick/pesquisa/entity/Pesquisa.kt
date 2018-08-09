@@ -8,7 +8,7 @@ import java.io.Serializable
 
 @DatabaseTable(tableName = "TB_PESQUISA")
 data class Pesquisa(@DatabaseField(id = true, columnName = Fields.ID_PESQUISA)
-                    var idPesquisa: Int? = null,
+                    var idPesquisa: String? = null,
 
                     @ForeignCollectionField(eager = false)
                     val respostas: ForeignCollection<Resposta>? = null): Serializable {

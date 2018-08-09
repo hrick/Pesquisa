@@ -18,7 +18,7 @@ class DatabaseHelper(private val context: Context) : OrmLiteSqliteOpenHelper(con
 
     private var respostaDao: Dao<Resposta, Int>? = null
     private var perguntaDao: Dao<Pergunta, Int>? = null
-    private var pesquisaDao: Dao<Pesquisa, Int>? = null
+    private var pesquisaDao: Dao<Pesquisa, String>? = null
     private var opcaoDao: Dao<Opcao, Int>? = null
     private var perguntaOpcaoDao: Dao<PerguntaOpcao, String>? = null
 
@@ -112,7 +112,7 @@ class DatabaseHelper(private val context: Context) : OrmLiteSqliteOpenHelper(con
         return perguntaDao
     }
 
-    fun getPesquisaDao(): Dao<Pesquisa, Int>? {
+    fun getPesquisaDao(): Dao<Pesquisa, String>? {
         if (null == pesquisaDao) {
             try {
                 pesquisaDao = getDao(Pesquisa::class.java)

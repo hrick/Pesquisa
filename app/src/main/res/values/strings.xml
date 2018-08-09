@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pesquisa</string>
+    <string name="app_name">CEERT Pesquisa</string>
     <string name="titulo_pesquisas_realizadas">Pesquisas Realizadas</string>
     <string name="titulo_informacao">Informações</string>
     <string name="hint_quantidade">0</string>
@@ -12,4 +12,8 @@
     <string name="ok">OK</string>
     <string name="warning">Atenção</string>
     <string name="pesquisa_diversidade_e_equidade_racial">Pesquisa diversidade e equidade racial</string>
+    <string name="salvar">Salvar</string>
+    <string name="msg_precisa_permissao">Para continuar precisamos dessa permissão</string>
+    <string name="msg_ir_configuracao">Ir para as configurações</string>
+    <string name="msg_premissao_pedindo">Precisamos da permissão de escrita para salvar o arquivo</string>
 </resources>

@@ -15,7 +15,7 @@ class RespostaRepository private constructor(ctx: Context) {
 
     private val helper: DatabaseHelper = DatabaseHelper(ctx)
 
-    fun respostasPorPesquisa(idPesquisa: Int): MutableList<Resposta>? {
+    fun respostasPorPesquisa(idPesquisa: String): MutableList<Resposta>? {
         return helper.getRespostaDao()?.queryBuilder()?.where()?.eq(Resposta.Fields.ID_PESQUISA, idPesquisa)?.query()
     }
 

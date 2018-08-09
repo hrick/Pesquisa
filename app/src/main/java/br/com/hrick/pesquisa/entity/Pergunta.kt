@@ -11,6 +11,8 @@ data class Pergunta(@DatabaseField(columnName = Pergunta.Fields.ID_PERGUNTA, id 
                     val idPergunta: Int? = null,
                     @DatabaseField(columnName = Pergunta.Fields.DESCRICAO)
                     val descricao: String? = null,
+                    @DatabaseField(columnName = Pergunta.Fields.TIPO)
+                    val tipo: String? = null,
                     @DatabaseField(columnName = Pergunta.Fields.ORDENACAO)
                     val ordenacao: Int? = null,
                     @ForeignCollectionField(eager = false)
@@ -20,5 +22,6 @@ data class Pergunta(@DatabaseField(columnName = Pergunta.Fields.ID_PERGUNTA, id 
         const val ID_PERGUNTA = "ID_PERGUNTA"
         const val DESCRICAO = "DESCRICAO"
         const val ORDENACAO = "ORDENACAO"
+        const val TIPO = "TIPO"
     }
 }

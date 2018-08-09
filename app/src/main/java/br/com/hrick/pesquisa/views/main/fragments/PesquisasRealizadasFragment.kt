@@ -11,6 +11,8 @@ import android.view.View
 import android.view.ViewGroup
 import br.com.hrick.pesquisa.R
 import br.com.hrick.pesquisa.entity.Pesquisa
+import br.com.hrick.pesquisa.repository.data.PesquisaRepository
+import br.com.hrick.pesquisa.views.main.MainActivity
 import br.com.hrick.pesquisa.views.main.OnItemSelectedListener
 import kotlinx.android.synthetic.main.fragment_pesquisas_realizadas_list.*
 import kotlinx.android.synthetic.main.fragment_pesquisas_realizadas_list.view.*
@@ -40,8 +42,6 @@ class PesquisasRealizadasFragment : Fragment() {
         return view
     }
 
-
-
     override fun onAttach(context: Context?) {
         super.onAttach(context)
         listener = context as OnItemSelectedListener
@@ -52,9 +52,14 @@ class PesquisasRealizadasFragment : Fragment() {
         listener = null
     }
 
+    override fun onResume() {
+        super.onResume()
+        showData((context as MainActivity).pesquisasRealizadas)
+    }
+
     fun showData(list: List<Pesquisa>?) {
-//        rvPesquisasRealizadas.adapter = PesquisasRealizasViewAdapter(list)
-//        rvPesquisasRealizadas.adapter.notifyDataSetChanged()
+        rvPesquisasRealizadas.adapter = PesquisasRealizasViewAdapter(list)
+        rvPesquisasRealizadas.adapter.notifyDataSetChanged()
     }
 
 
@@ -68,7 +73,7 @@ class PesquisasRealizadasFragment : Fragment() {
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val pesquisa = pesquisas!![position]
-            holder.bindPesquisa(pesquisa)
+            holder.bindPesquisa(pesquisa, position)
         }
 
 
@@ -80,8 +85,9 @@ class PesquisasRealizadasFragment : Fragment() {
         inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             var mItem: Pesquisa? = null
 
-            fun bindPesquisa(item: Pesquisa) {
+            fun bindPesquisa(item: Pesquisa, position: Int) {
                 mItem = item
+                itemView.tvTitulo.text = "Pesquisa ${position + 1}"
                 mItem?.let { pesquisa -> itemView.setOnClickListener { listener?.abrirPesquisa(pesquisa) } }
                 mItem?.let { pesquisa -> itemView.ibExcluir.setOnClickListener { listener?.excluirPesquisa(pesquisa) } }
             }

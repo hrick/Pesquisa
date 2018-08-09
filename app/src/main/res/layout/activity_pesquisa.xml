@@ -11,7 +11,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,55 +34,14 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <LinearLayout
+            <Button
+                android:id="@+id/btSalvar"
+                android:text="@string/salvar"
+                android:textColor="@color/colorPrimary"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:orientation="vertical">
+                android:layout_height="50dp" />
 
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/layoutTextPergunta"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:errorTextAppearance="@style/WelcomeErrorAppearance">
-
-                    <EditText
-                        android:id="@+id/textPergunta"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/label_user"
-                        android:imeOptions="actionNext"
-                        android:textColor="@color/white" />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/layoutTextPergunta2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:errorTextAppearance="@style/WelcomeErrorAppearance">
-
-                    <EditText
-                        android:id="@+id/textPergunta2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/label_user"
-                        android:textColor="@color/white" />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/layoutTextPergunta3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:errorTextAppearance="@style/WelcomeErrorAppearance">
-
-                    <EditText
-                        android:id="@+id/textPergunta3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/label_user"
-                        android:maxLines="1" />
-                </android.support.design.widget.TextInputLayout>
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

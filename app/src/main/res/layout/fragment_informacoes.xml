@@ -11,6 +11,7 @@
         android:layout_marginTop="24dp"
         android:gravity="center"
         android:text="@string/titulo_pesquisas_realizadas"
+        android:textColor="@color/textColor"
         android:textSize="28sp"
         android:textStyle="bold" />
 
@@ -27,8 +28,9 @@
 
     <Button
         android:id="@+id/ibExportExcel"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColor"
         android:background="?android:attr/selectableItemBackgroundBorderless"
         android:text="@string/exportar_em_excel"
         android:drawableTop="@drawable/file_export"
